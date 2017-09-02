@@ -1,4 +1,4 @@
-myapp.factory('ProjectService', function($q,  $http){
+myapp.factory('ProjectService', function($q, $http){
 	return {
 		getDetails : function() {
 			/*
@@ -16,13 +16,8 @@ myapp.factory('ProjectService', function($q,  $http){
 	return clientEnquiryTaskRejectStatusDefer.promise;*/
 	},
 
-	getJSData : function(payload) {
-		var data = {};
-    var url = "https://api.github.com/search/";
-    var promise = $http.get(url + 'repositories?q=' + payload, { cache: true }).then(function (response) {
-    	data = response.data;
-    });
-    return data;
+	getRepos : function(payload) {
+		
 	},
 
         clientEnquiryTaskRejectStatus : function(payload){

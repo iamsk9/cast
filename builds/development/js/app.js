@@ -12,9 +12,9 @@ var myapp = angular.module('myapp', ['ngMaterial', 'ngRoute']);
 	      templateUrl : basepath + '/repos.html',
 				controller :'repoController'
 	    })
-	    .when('/signin',{
-	      templateUrl : basepath + '/signin.html',
-	      controller : 'authController'
+	    .when('/users/:userName',{
+	      templateUrl : basepath + '/user.html',
+	      controller : 'userController'
 	    })
 	    .when('/signup',{
 	      templateUrl : basepath + '/signup.html',

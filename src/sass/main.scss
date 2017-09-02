@@ -10,3 +10,19 @@
 #mainpage{
   background-color: $grey;
 }
+a{
+  font-size: 30px;
+}
+#search{
+  display: block;
+  margin: 0 auto;
+  max-width: 250px;
+}
+#repoList{
+  padding: 5px 10px 10px 10px;
+}
+.buttonGroup{
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}

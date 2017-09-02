@@ -11,3 +11,23 @@
 /* line 10, src/sass/main.scss */
 #mainpage {
   background-color: #f6f6f6; }
+
+/* line 13, src/sass/main.scss */
+a {
+  font-size: 30px; }
+
+/* line 16, src/sass/main.scss */
+#search {
+  display: block;
+  margin: 0 auto;
+  max-width: 250px; }
+
+/* line 21, src/sass/main.scss */
+#repoList {
+  padding: 5px 10px 10px 10px; }
+
+/* line 24, src/sass/main.scss */
+.buttonGroup {
+  display: block;
+  text-align: center;
+  margin: 0 auto; }

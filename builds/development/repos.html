@@ -1,3 +1,26 @@
 <div id="repopage" ng-controller="repoController">
-
+  <br>
+  <input ng-model="q" id="search" class="form-control" placeholder="Filter repo">
+  <md-content id="repoList">
+      <md-list flex>
+        <md-list-item class="md-3-line" ng-repeat="repo in repos | filter:q | startFrom:currentPage*pageSize | limitTo:pageSize" ng-click="getUser(repo)">
+          <div class="md-list-item-text" layout="column">
+            <a>{{repo.full_name}}</a>
+          </div>
+          <div class="md-list-item-text" layout="column">
+            <label>Forks: {{ repo.forks }}</label>
+            <label>Open Issues:{{ repo.open_issues }}</label>
+            <label>Watchers: {{ repo.watchers }}</label>
+          </div>
+            <md-divider></md-divider>
+        </md-list-item>
+      </md-list>
+  </md-content>
+  <div class="buttonGroup">
+    <md-button class="md-raised md-primary" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+      Previous</md-button>  
+    {{currentPage+1}}/{{numberOfPages()}}
+    <md-button class="md-raised md-primary" ng-disabled="currentPage >= getData().length/pageSize - 1" ng-click="currentPage=currentPage+1">
+      Next</md-button>
+  </div>
 </div>
