@@ -13,8 +13,6 @@ myapp.controller("repoController", function($scope, $location, $http, $routePara
   }
 
   function getRepos(){
-    console.log($routeParams.languageName);
-		var data = {};
     var url = "https://api.github.com/search/repositories?q=" + $routeParams.languageName;
     $http.get(url)
 		.then(function (response){
@@ -27,8 +25,15 @@ myapp.controller("repoController", function($scope, $location, $http, $routePara
   }
   getRepos();
   $scope.getUser = function(repo){
-    console.log(repo.owner.login);
-    $location.path('/users/' + repo.owner.login);
+    var url = "https://api.github.com/repos/" + repo.owner.login + "/" + $routeParams.languageName + "/contributors";
+    $http.get(url)
+		.then(function (response){
+      $location.path('/users/' + response.data[0].login);
+		}).catch(function(response) {
+		  console.error('Error occurred:', response.status, response.data);
+		}).finally(function() {
+
+		});
   };
 });
 myapp.filter('startFrom', function() {

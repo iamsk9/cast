@@ -5,7 +5,7 @@
       <md-list flex>
         <md-list-item class="md-3-line" ng-repeat="repo in repos | filter:q | startFrom:currentPage*pageSize | limitTo:pageSize" ng-click="getUser(repo)">
           <div class="md-list-item-text" layout="column">
-            <a>{{repo.full_name}}</a>
+            <a class="languageRepos">{{repo.full_name}}</a>
           </div>
           <div class="md-list-item-text" layout="column">
             <label>Forks: {{ repo.forks }}</label>
@@ -18,7 +18,7 @@
   </md-content>
   <div class="buttonGroup">
     <md-button class="md-raised md-primary" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
-      Previous</md-button>  
+      Previous</md-button>
     {{currentPage+1}}/{{numberOfPages()}}
     <md-button class="md-raised md-primary" ng-disabled="currentPage >= getData().length/pageSize - 1" ng-click="currentPage=currentPage+1">
       Next</md-button>
