@@ -1,5 +1,5 @@
 TechScan
-This project id developed using the Angular JS, BootStrap and Gulp.
+This project is developed using the Angular JS, BootStrap and Gulp.
 
 To run the this application, follow these steps:
 1. Type git clone https://github.com/iamsk9/cast.git in GitBash or Terminal
