@@ -5,6 +5,10 @@
     <title>TechScan</title>
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css"/>
 
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
@@ -21,11 +25,11 @@
     <script type="text/javascript" src = "/js/repoController.js"></script>
     <script type="text/javascript" src = "/js/userController.js"></script>
   </head>
-  <body>
-    <img src="/../img/logo.jpg" alt="cast_company_logo" width="300px" height="60px" id="logo">
-    <label id="techscan">TechScan</label>
-    <body ng-app="myapp">
-      <ng-view></ng-view>
-    </body>
+  <body ng-app="myapp">
+    <div class="header">
+      <img src="/../img/logo.jpg" alt="cast_company_logo" width="300px" height="60px" id="logo">
+      <label id="techscan">TECHSCAN</label>
+    </div>
+    <ng-view></ng-view>
   </body>
 </html>

@@ -16,16 +16,42 @@ myapp.controller("userController", function($scope, $location, $http, $routePara
     $http.get(url)
 		.then(function (response){
       $scope.userDetails = response.data.items[0];
+      console.log($scope.userDetails);
       getRepos($scope.userDetails);
 		}).catch(function(response) {
 		  console.error('Error occurred:', response.status, response.data);
 		}).finally(function() {
 		});
   }
+
   function getRepos(data){
     $http.get(data.repos_url)
 		.then(function (response){
       $scope.repos = response.data;
+      getFollowers(data);
+		}).catch(function(response) {
+		  console.error('Error occurred:', response.status, response.data);
+		}).finally(function() {
+		});
+  }
+
+  function getFollowers(data){
+    $http.get(data.followers_url)
+		.then(function (response){
+      $scope.followers = response.data.length;
+      getFollowing(data)
+		}).catch(function(response) {
+		  console.error('Error occurred:', response.status, response.data);
+		}).finally(function() {
+		});
+  }
+  
+  function getFollowing(data){
+    var url = "https://api.github.com/users/" + $routeParams.userName + "/following";
+    $http.get(url)
+		.then(function (response){
+      console.log(response.data.length);
+      $scope.following = response.data.length;
 		}).catch(function(response) {
 		  console.error('Error occurred:', response.status, response.data);
 		}).finally(function() {

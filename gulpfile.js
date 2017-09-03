@@ -47,9 +47,9 @@ gulp.task('sass', function(){
 });
 
 gulp.task('watch', function(){
-  gulp.watch('src/templates/**/*.html', ['html']);
-  gulp.watch('src/js/**/*.js', ['js']);
-  gulp.watch('src/sass/**/*.scss', ['sass']);
+  gulp.watch('src/templates/*.html', ['html']);
+  gulp.watch('src/js/*.js', ['js']);
+  gulp.watch('src/sass/*.scss', ['sass']);
 });
 
 gulp.task('connect', function() {

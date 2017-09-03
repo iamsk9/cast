@@ -1,15 +1,14 @@
 var basepath = "./../";
 
 var myapp = angular.module('myapp', ['ngMaterial', 'ngRoute']);
-
 	myapp.config(function($routeProvider){
-	  $routeProvider
+		$routeProvider
 			.when('/technologies',{
 				templateUrl : basepath + '/main.html',
-	      controller :'mainController'
+	    	controller :'mainController'
 			})
-	    .when('/repo/:languageName',{
-	      templateUrl : basepath + '/repos.html',
+	   .when('/repo/:languageName',{
+	     	templateUrl : basepath + '/repos.html',
 				controller :'repoController'
 	    })
 	    .when('/users/:userName',{
