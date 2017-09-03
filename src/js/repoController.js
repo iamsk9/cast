@@ -29,7 +29,6 @@ myapp.controller("repoController", function($scope, $location, $http, $routePara
     var url = "https://api.github.com/repos/" + repo.owner.login + "/" + $routeParams.languageName + "/contributors";
     $http.get(url)
 		.then(function (response){
-      console.log(response.data);
       $location.path('/users/' + response.data[0].login);
 		}).catch(function(response) {
 		  console.error('Error occurred:', response.status, response.data);
