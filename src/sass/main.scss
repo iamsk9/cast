@@ -7,11 +7,15 @@
   padding-left: 60px;
   font-size: 70px;
 }
-#mainpage{
+#mainpage, #userpage, #repopage{
   background-color: $grey;
 }
-a{
+.languageRepos{
   font-size: 30px;
+}
+.userRepos{
+  font-size: 20px;
+  padding-left: 15px;
 }
 #search{
   display: block;
@@ -25,4 +29,15 @@ a{
   display: block;
   text-align: center;
   margin: 0 auto;
+}
+div.polaroid {
+  width: 250px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+  margin-top: 20px;
+}
+
+div.h2 {
+  padding-left: 50px;
 }
