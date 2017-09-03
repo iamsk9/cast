@@ -3,15 +3,18 @@
   <div class="container-fluid">
     <input ng-model="q" id="search" class="form-control" placeholder="Filter repo">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div class="polaroid">
           <img src={{userDetails.avatar_url}} alt={{userDetails.login}} width="250px" height="250px">
-          <h2>{{userDetails.login}}</h2>
         </div>
+        <h2>{{userDetails.login}}</h2>
+        <h4>Followers : {{followers}}</h4>
+        <h4>Following : {{following}}</h4>
       </div>
-      <div class='md-padding' layout="row" layout-wrap>
-        <md-card style="width: 400px;" ng-repeat="repo in repos | filter:q | startFrom:currentPage*pageSize | limitTo:pageSize">
-          <a href={{repo.html_url}} class="userRepos" target="_blank">{{repo.full_name}}</a>
+      <div class="col-md-9">
+        <div class='md-padding' layout="row" layout-wrap>
+          <md-card style="width: 400px;" ng-repeat="repo in repos | filter:q | startFrom:currentPage*pageSize | limitTo:pageSize">
+            <a href={{repo.html_url}} class="userRepos" target="_blank">{{repo.full_name}}</a>
           <md-card-content>
             <p>{{repo.description}}</p>
           </md-card-content>
@@ -21,6 +24,7 @@
             <md-button>Watchers: {{repo.watchers}}</md-button>
           </div>
         </md-card>
+      </div>
       </div>
     </div>
     <div class="buttonGroup">
