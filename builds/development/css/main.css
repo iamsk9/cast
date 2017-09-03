@@ -1,3 +1,13 @@
 /* line 2, src/sass/main.scss */
-body {
-  color: #ff0000; }
+#logo {
+  padding-left: 15px; }
+
+/* line 5, src/sass/main.scss */
+#techscan {
+  padding-top: 20px;
+  padding-left: 60px;
+  font-size: 70px; }
+
+/* line 10, src/sass/main.scss */
+#mainpage {
+  background-color: #f6f6f6; }
